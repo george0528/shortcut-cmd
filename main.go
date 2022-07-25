@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-origin-cli/data"
 	"os/exec"
 	"strings"
 
@@ -14,9 +15,7 @@ func main() {
 		// 選択肢のタイトル
 		Label: "Select Command",
 		// 選択肢の配列
-		Items: []string{
-			"ls -a",
-		},
+		Items: data.CmdSelectArr,
 	}
 
 	idx, result, errSelect := prompt.Run() //入力を受け取る
