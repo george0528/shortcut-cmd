@@ -37,5 +37,5 @@ func main() {
 	}
 
 	fmt.Printf("You choose %d %q\n",idx, result)
-	fmt.Printf("exec command %q\n", outCmd)
+	fmt.Printf("exec command: \n %s", outCmd)
 }
