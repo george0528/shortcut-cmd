@@ -1,15 +1,35 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"go-origin-cli/data"
+	"io/ioutil"
+	"log"
 	"os/exec"
 	"strings"
 
 	"github.com/manifoldco/promptui"
 )
 
+type CmdPair struct {
+	Name string `json:"name"`
+	Cmd string `json:"cmd"`
+}
+
 func main() {
+	// JSONファイル読み込み
+	bytes, err := ioutil.ReadFile("data/data.json")
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	// JSONデコード
+	var cmdPairs []CmdPair
+	if err := json.Unmarshal(bytes, &cmdPairs); err != nil {
+		log.Fatal(err)
+		return
+	}
 
 	prompt := promptui.Select{
 		// 選択肢のタイトル
