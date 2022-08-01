@@ -1,3 +1,4 @@
 data/data.go
 data/data.json
 *.exe
+test/
