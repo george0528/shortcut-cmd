@@ -1,11 +1,11 @@
 package main
 
 import (
-	"encoding/json"
+	// "encoding/json"
 	"fmt"
 	"go-origin-cli/data"
-	"io/ioutil"
-	"log"
+	// "io/ioutil"
+	// "log"
 	"os/exec"
 	"strings"
 
@@ -18,18 +18,18 @@ type CmdPair struct {
 }
 
 func main() {
-	// JSONファイル読み込み
-	bytes, err := ioutil.ReadFile("data/data.json")
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	// JSONデコード
-	var cmdPairs []CmdPair
-	if err := json.Unmarshal(bytes, &cmdPairs); err != nil {
-		log.Fatal(err)
-		return
-	}
+	// // JSONファイル読み込み
+	// bytes, err := ioutil.ReadFile("data/data.json")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	return
+	// }
+	// // JSONデコード
+	// var cmdPairs []CmdPair
+	// if err := json.Unmarshal(bytes, &cmdPairs); err != nil {
+	// 	log.Fatal(err)
+	// 	return
+	// }
 
 	prompt := promptui.Select{
 		// 選択肢のタイトル
